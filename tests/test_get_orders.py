@@ -1,5 +1,6 @@
-import allure
 import requests
+
+import allure
 
 
 @allure.epic("Модуль получения списка заявок")
@@ -15,7 +16,7 @@ class TestGetOrders:
         assert response.status_code == 200
 
         response = response.json()
-        assert response['orders'] is not None
+        assert response['orders']
 
     @allure.title("Получение списка заявок без авторизации")
     def test_get_orders_without_authorization(self):
